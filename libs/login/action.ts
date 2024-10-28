@@ -17,9 +17,10 @@ export const login = async (formData: FormData) => {
     username: username,
     password: password
   })
+  console.log(body);
 
   //fetchinng
-  const url = process.env.API + "/auth/signin";
+  const url = process.env.API + "auth/login";
   const res = await fetch(url, {
     method: "POST",
     headers: {
@@ -28,13 +29,15 @@ export const login = async (formData: FormData) => {
     body: body,
     cache: 'no-store'
   })
+  console.log(url);
   if(res.ok) {
+    console.log("1");
     data = await res.json()
-    console.log(data);
+    console.log("2");
     if(data !== null) {
     //set cookie when success
-      cookies().set("quiz-session", data.access_token, { httpOnly: true });
-      cookies().set("quiz-session-refresh", data.refresh_token, { httpOnly: true });
+      cookies().set("asms-session", data.accessToken, { httpOnly: true });
+      cookies().set("asms-session-refresh", data.refreshToken, { httpOnly: true });
     }
   }
   else {
@@ -50,7 +53,7 @@ export const login = async (formData: FormData) => {
 
 
 export const SignOutAction = async () => {
-  cookies().delete("quiz-session");
-  cookies().delete("quiz-session-refresh");
+  cookies().delete("asms-session");
+  cookies().delete("asms-session-refresh");
   redirect("/login");
 }
