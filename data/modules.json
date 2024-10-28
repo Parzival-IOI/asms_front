@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "module": [
+    {
+      "name": "Dolorian",
+      "short": "DLR",
+      "path": "/dashboard/dolorian",
+      "icon": ""
+    },
+    {
+      "name": "Iron Giant",
+      "short": "IG",
+      "path": "/dashboard/iron-giant",
+      "icon": ""
+    },
+    {
+      "name": "Susano",
+      "short": "SSN",
+      "path": "/dashboard/susano",
+      "icon": ""
+    },
+    {
+      "name": "Mega God Zilla",
+      "short": "MGZ",
+      "path": "/dashboard/megagodzilla",
+      "icon": ""
+    }
+  ] 
+}
