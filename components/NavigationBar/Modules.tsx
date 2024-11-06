@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Cross } from '../Icon'
 
-const Modules = async (props: {toggleModules: Function, role: string}) => {
+const Modules = (props: {toggleModules: Function, role: string}) => {
 
   const [isList, setList] = useState<boolean>(false);
 
@@ -30,7 +30,7 @@ const Modules = async (props: {toggleModules: Function, role: string}) => {
     <div className={`w-full transition-all duration-1000 ${isList ? 'flex gap-2 flex-col justify-start items-center' : 'grid grid-cols-3 gap-8'}`}>
       {
         MenuList.module.map((menu, index) => {
-          if (props.role !== ("ROLE_" + menu.role)) {
+          if (menu.role.includes(props.role)) {
             return
           }
           return (

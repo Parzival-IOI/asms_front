@@ -63,8 +63,9 @@ export async function parseJwt(token: string | undefined) {
 }
 
 export async function getRole() {
-  const token = cookies().get("quiz-session")?.value;
+  const token = cookies().get("asms-session")?.value;
   const data: JwtPayload|null = await parseJwt(token);
   if(!data) return "";
+  data.role = data.role.replace("ROLE_", "");
   return data.role;
 } 

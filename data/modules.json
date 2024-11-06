@@ -6,42 +6,42 @@
       "short": "ADMIN",
       "path": "/dashboard/admin",
       "icon": "",
-      "role": "ADMIN"
+      "role": ["ADMIN"]
     },
     {
       "name": "Human Resources",
       "short": "HR",
       "path": "/dashboard/hr",
       "icon": "",
-      "role": "HR"
+      "role": ["HR"]
     },
     {
       "name": "Account",
       "short": "AC",
       "path": "/dashboard/ac",
       "icon": "",
-      "role": "ACCOUNT"
+      "role": ["ACCOUNT"]
     },
     {
       "name": "Registrar",
       "short": "RG",
       "path": "/dashboard/rg",
       "icon": "",
-      "role": "REGISTRAR"
+      "role": ["REGISTRAR"]
     },
     {
       "name": "Teacher",
       "short": "TC",
       "path": "/dashboard/rg",
       "icon": "",
-      "role": "TEACHER"
+      "role": ["TEACHER"]
     },
     {
       "name": "Payment",
       "short": "PY",
       "path": "/dashboard/py",
       "icon": "",
-      "role": "ACCOUNT|ADMIN"
+      "role": ["ACCOUNT","ADMIN"]
     }
   ] 
 }

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Roboto } from 'next/font/google'
 import "./globals.css";
@@ -11,8 +12,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: "CAD",
-  description: "Customized Advance Dashboard",
+  title: "asms",
+  description: "Advanced School Management System",
 };
 
 export default async function RootLayout({
