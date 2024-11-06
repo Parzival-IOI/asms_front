@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Cross } from '../Icon'
 
-const Modules = (props: {toggleModules: Function}) => {
+const Modules = async (props: {toggleModules: Function, role: string}) => {
 
   const [isList, setList] = useState<boolean>(false);
 
@@ -30,6 +30,9 @@ const Modules = (props: {toggleModules: Function}) => {
     <div className={`w-full transition-all duration-1000 ${isList ? 'flex gap-2 flex-col justify-start items-center' : 'grid grid-cols-3 gap-8'}`}>
       {
         MenuList.module.map((menu, index) => {
+          if (props.role !== ("ROLE_" + menu.role)) {
+            return
+          }
           return (
             <Link href={menu.path} key={index} className={`${isList ? 'w-full rounded-lg px-3 py-2' : 'w-full aspect-square rounded-md text-center'} transition-all duration-300 bg-orange-600/90 hover:opacity-80`}>
               {isList ? menu.name : menu.short}

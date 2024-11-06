@@ -5,7 +5,7 @@ import NavLists from "./NavLists";
 import { useState } from "react";
 import Modules from "./Modules";
 
-const MainNav = () => {
+const MainNav = (props: {role: string}) => {
 
   const [openModule, setModule] = useState<boolean>(false);
 
@@ -15,7 +15,7 @@ const MainNav = () => {
     <div className="hidden lg:flex w-full h-5 md:h-14 lg:h-16 dark:bg-slate-900 bg-slate-300/40 p-3 justify-between items-center ">
       
       <div className={`left-0 ${openModule ? 'translate-x-0' : 'translate-x-[-100%]'} top-0 absolute z-50 w-1/4 transition duration-1000`}>
-        <Modules toggleModules={toggleModules} />
+        <Modules toggleModules={toggleModules} role={props.role} />
       </div>
       <div className={`${openModule ? 'left-0' : 'left-[-100%]'} top-0 absolute z-[49] w-screen h-screen bg-slate-800/50`} onClick={toggleModules}></div>
       

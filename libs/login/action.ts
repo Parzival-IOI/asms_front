@@ -1,6 +1,7 @@
 "use server";
 import { redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
+import { JwtPayload } from './Types/JwtPayload';
 
 export const login = async (formData: FormData) => {
   //validate data
@@ -29,11 +30,8 @@ export const login = async (formData: FormData) => {
     body: body,
     cache: 'no-store'
   })
-  console.log(url);
   if(res.ok) {
-    console.log("1");
     data = await res.json()
-    console.log("2");
     if(data !== null) {
     //set cookie when success
       cookies().set("asms-session", data.accessToken, { httpOnly: true });
@@ -42,7 +40,6 @@ export const login = async (formData: FormData) => {
   }
   else {
     const err = await res.text();
-    // if(err === "User Not Found" || err === "Bad credentials" || err === "Blocked") 
     throw new Error(err);
   }
     
@@ -57,3 +54,17 @@ export const SignOutAction = async () => {
   cookies().delete("asms-session-refresh");
   redirect("/login");
 }
+
+export async function parseJwt(token: string | undefined) {
+  if (!token) { return; }
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace('-', '+').replace('_', '/');
+  return JSON.parse(atob(base64));
+}
+
+export async function getRole() {
+  const token = cookies().get("quiz-session")?.value;
+  const data: JwtPayload|null = await parseJwt(token);
+  if(!data) return "";
+  return data.role;
+} 

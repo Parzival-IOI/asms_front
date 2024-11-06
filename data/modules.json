@@ -2,28 +2,46 @@
   "version": 1,
   "module": [
     {
-      "name": "Dolorian",
-      "short": "DLR",
-      "path": "/dashboard/dolorian",
-      "icon": ""
+      "name": "ADMIN",
+      "short": "ADMIN",
+      "path": "/dashboard/admin",
+      "icon": "",
+      "role": "ADMIN"
     },
     {
-      "name": "Iron Giant",
-      "short": "IG",
-      "path": "/dashboard/iron-giant",
-      "icon": ""
+      "name": "Human Resources",
+      "short": "HR",
+      "path": "/dashboard/hr",
+      "icon": "",
+      "role": "HR"
     },
     {
-      "name": "Susano",
-      "short": "SSN",
-      "path": "/dashboard/susano",
-      "icon": ""
+      "name": "Account",
+      "short": "AC",
+      "path": "/dashboard/ac",
+      "icon": "",
+      "role": "ACCOUNT"
     },
     {
-      "name": "Mega God Zilla",
-      "short": "MGZ",
-      "path": "/dashboard/megagodzilla",
-      "icon": ""
+      "name": "Registrar",
+      "short": "RG",
+      "path": "/dashboard/rg",
+      "icon": "",
+      "role": "REGISTRAR"
+    },
+    {
+      "name": "Teacher",
+      "short": "TC",
+      "path": "/dashboard/rg",
+      "icon": "",
+      "role": "TEACHER"
+    },
+    {
+      "name": "Payment",
+      "short": "PY",
+      "path": "/dashboard/py",
+      "icon": "",
+      "role": "ACCOUNT|ADMIN"
     }
   ] 
 }
