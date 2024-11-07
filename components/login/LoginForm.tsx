@@ -21,7 +21,7 @@ const LoginForm = () => {
   return (
     <>
       {isPending && <Loader />}
-      <form className="pt-8 lg:pt-4 min-w-[80vw] sm:min-w-[50vw] lg:min-w-[30rem] h-auto grid grid-cols-1 gap-2" action={loginingOut} method="POST">
+      <form className="pt-8 lg:pt-4 min-w-[80vw] sm:min-w-[50vw] lg:min-w-[30rem] h-auto grid grid-cols-1 gap-2" action={loginingOut}>
         <div className="mt-2">
           <div className="w-full flex flex-row-reverse rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
             <input type="text" name="username" id="username" autoComplete="username" 

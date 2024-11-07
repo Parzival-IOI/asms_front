@@ -3,8 +3,8 @@ import { NextRequest } from 'next/server'
  
 export async function middleware(request: NextRequest) {
     const cookie = request.cookies.has("asms-session");
-    if (!cookie && !request.nextUrl.pathname.startsWith('/login')) {
-        return NextResponse.redirect(new URL('/login', request.url))
+    if ((!cookie && !request.nextUrl.pathname.startsWith('/login')) || request.nextUrl.pathname.length === 1) {
+        return request.nextUrl.pathname.length !== 1 ? NextResponse.redirect(new URL('/login', request.url)): null
     }
     // return NextResponse.redirect(new URL('/', request.url))
 }

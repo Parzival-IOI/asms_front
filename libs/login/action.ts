@@ -44,7 +44,7 @@ export const login = async (formData: FormData) => {
   }
     
   if(data !== null) {
-    redirect("/");
+    redirect("/dashboard");
   }
 }
 
