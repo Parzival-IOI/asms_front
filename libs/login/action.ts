@@ -52,7 +52,7 @@ export const login = async (formData: FormData) => {
 export const SignOutAction = async () => {
   cookies().delete("asms-session");
   cookies().delete("asms-session-refresh");
-  redirect("/login");
+  redirect("/");
 }
 
 export async function parseJwt(token: string | undefined) {

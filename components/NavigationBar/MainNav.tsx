@@ -19,7 +19,7 @@ const MainNav = (props: {role: string}) => {
         path === "/login" || path === "/" || path === "" ?
         <div>new nav</div>
         :
-        <div className="hidden lg:flex w-full h-5 md:h-14 lg:h-16 dark:bg-slate-900 bg-slate-300/40 p-3 justify-between items-center ">
+        <div className="hidden lg:flex w-full h-5 md:h-14 lg:h-16 dark:bg-slate-900 bg-slate-300/40 p-3 justify-between items-center shadow-none dark:shadow-white">
           <div className={`left-0 ${openModule ? 'translate-x-0' : 'translate-x-[-100%]'} top-0 absolute z-50 w-1/4 transition duration-1000`}>
             <Modules toggleModules={toggleModules} role={props.role} />
           </div>

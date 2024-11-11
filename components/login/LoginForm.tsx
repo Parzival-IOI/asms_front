@@ -27,7 +27,7 @@ const LoginForm = () => {
             <input type="text" name="username" id="username" autoComplete="username" 
             className="w-full block flex-1 peer border-0 outline-none bg-transparent py-1.5 px-3 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" 
             placeholder="Anorak" />
-            <span className="flex select-none items-center px-3 sm:text-sm border-r border-white peer-focus:border-r-2 peer-focus:border-indigo-600">
+            <span className="flex select-none items-center px-3 sm:text-sm border-r dark:border-white border-gray-300 peer-focus:border-r-2 peer-focus:border-indigo-600">
               <span className="md:block hidden">Username</span>
               <span className="md:hidden block"><User size="20" /></span>
             </span>
@@ -39,7 +39,7 @@ const LoginForm = () => {
             <input type="password" name="password" id="password" autoComplete="password" 
             className="w-full block flex-1 peer border-0 outline-none bg-transparent py-1.5 px-3 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" 
             placeholder="" />
-            <span className="flex select-none items-center px-3 sm:text-sm border-r border-white peer-focus:border-r-2 peer-focus:border-indigo-600">
+            <span className="flex select-none items-center px-3 sm:text-sm border-r dark:border-white border-gray-300 peer-focus:border-r-2 peer-focus:border-indigo-600">
               <span className="md:block hidden">Password</span>
               <span className="md:hidden block"><Password size="20" /></span>
             </span>

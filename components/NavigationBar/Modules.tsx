@@ -30,12 +30,13 @@ const Modules = (props: {toggleModules: Function, role: string}) => {
     <div className={`w-full transition-all duration-1000 ${isList ? 'flex gap-2 flex-col justify-start items-center' : 'grid grid-cols-3 gap-8'}`}>
       {
         MenuList.module.map((menu, index) => {
-          if (menu.role.includes(props.role)) {
+          if (!menu.role.includes(props.role)) {
             return
           }
           return (
-            <Link href={menu.path} key={index} className={`${isList ? 'w-full rounded-lg px-3 py-2' : 'w-full aspect-square rounded-md text-center'} transition-all duration-300 bg-orange-600/90 hover:opacity-80`}>
+            <Link href={menu.path} key={index} className={`${isList ? 'w-full rounded-lg px-3 py-2 flex gap-4 justify-between' : 'w-full aspect-square rounded-md text-center'} transition-all duration-300 bg-orange-600/90 hover:opacity-80`}>
               {isList ? menu.name : menu.short}
+              <span dangerouslySetInnerHTML={{ __html: menu.icon }}></span>
             </Link>
           )
         })
