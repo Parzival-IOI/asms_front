@@ -1,9 +1,11 @@
 "use client";
 import { toast } from "sonner";
-import { Password } from "../Icon"
+import { Exit, Password } from "../Icon"
 import { useMutation } from "@tanstack/react-query";
 import { SignOutAction } from "@/libs/login/action";
 import Loader from "../Loader";
+import { Tooltip } from "antd";
+import { homedir } from "os";
 
 const SignOut = () => {
 
@@ -20,11 +22,13 @@ const SignOut = () => {
   return (
     <>
       {isPending && <Loader/>}
-      <button className="flex justify-evenly gap-2 hover:bg-orange-500/50 px-3 py-2 rounded-md text-sm" 
-        onClick={() => SigningOut()}>
-        <Password size="18" />
-        <div className="hidden md:block">Sign Out</div>
-      </button>
+      <Tooltip title="Logout" trigger="hover">
+        <button className="flex justify-center items-center w-[2.5rem] aspect-square overflow-hidden rounded-full hover:bg-orange-500/50" 
+          onClick={() => SigningOut()}>
+          <Exit size="22" />
+          <div className="hidden md:block logout"></div>
+        </button>
+      </Tooltip>
     </>
     
   )

@@ -2,8 +2,9 @@
 import MenuList from '@/data/modules.json'
 import { Switch } from '@headlessui/react'
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Cross } from '../Icon'
+import { Tooltip } from 'antd'
 
 const Modules = (props: {toggleModules: Function, role: string}) => {
 
@@ -34,10 +35,12 @@ const Modules = (props: {toggleModules: Function, role: string}) => {
             return
           }
           return (
-            <Link href={menu.path} key={index} className={`${isList ? 'w-full rounded-lg px-3 py-2 flex gap-4 justify-between' : 'w-full aspect-square rounded-md text-center'} transition-all duration-300 bg-orange-600/90 hover:opacity-80`}>
-              {isList ? menu.name : menu.short}
-              <span dangerouslySetInnerHTML={{ __html: menu.icon }}></span>
-            </Link>
+            <Tooltip title={menu.name} trigger="hover" key={index}>
+              <Link href={menu.path} className={`${menu.name} ${isList ? 'w-full rounded-lg px-3 py-2 flex gap-4 justify-between' : 'w-full aspect-square rounded-md text-center'} transition-all duration-300 bg-orange-600/90 hover:opacity-80`}>
+                {isList ? menu.name : menu.short}
+                <span dangerouslySetInnerHTML={{ __html: menu.icon }}></span>
+              </Link>
+            </Tooltip>
           )
         })
       }
