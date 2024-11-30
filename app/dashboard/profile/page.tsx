@@ -2,9 +2,9 @@
 
 const page = () => {
   return (
-    <div className="overflow-y-auto h-screen">
-        <div className="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4">
-            <div className="mb-4 col-span-full xl:mb-2">
+    <div className="overflow-y-auto h-[90vh]">
+        <div className="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-2">
+            <div className="mb-2 col-span-full xl:mb-2 flex justify-between pr-4">
                 <nav className="flex mb-5" aria-label="Breadcrumb">
                     <ol className="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
                     <li className="inline-flex items-center">

@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex flex-col md:flex-row overflow-x-hidden relative p-0 m-0 transition-opacity duration-200 gap-1">
+    <main className="flex flex-col md:flex-row overflow-y-hidden relative p-0 m-0 transition-opacity duration-200 gap-1">
       <SideBar/>
       <div className="w-full">
         {children}

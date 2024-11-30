@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased`}
+        className={`${roboto.className} antialiased h-screen w-full`}
       >
         <MainNav role={role} />
         <Toaster position="bottom-right" visibleToasts={1} expand={true} richColors closeButton />

@@ -26,7 +26,7 @@ body {
   }
 }
 
-.container {
+.container-dot {
   --uib-size: 40px;
   --uib-speed: .9s;
   position: relative;
