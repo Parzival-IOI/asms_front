@@ -1,7 +1,8 @@
 "use server";
-import { redirect } from 'next/navigation'
+import { permanentRedirect, redirect } from 'next/navigation'
 import { cookies } from 'next/headers'
-import { JwtPayload } from './Types/JwtPayload';
+import { JwtPayload } from '../Types/JwtPayload';
+import { customFetch } from '../customFetch';
 
 export const login = async (formData: FormData) => {
   //validate data
@@ -50,9 +51,13 @@ export const login = async (formData: FormData) => {
 
 
 export const SignOutAction = async () => {
+  
+  await customFetch("auth/logout", "POST", null);
+
   cookies().delete("asms-session");
   cookies().delete("asms-session-refresh");
-  redirect("/");
+  permanentRedirect("/");
+  
 }
 
 export async function parseJwt(token: string | undefined) {

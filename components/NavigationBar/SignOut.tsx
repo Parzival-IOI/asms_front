@@ -5,7 +5,6 @@ import { useMutation } from "@tanstack/react-query";
 import { SignOutAction } from "@/libs/login/action";
 import Loader from "../Loader";
 import { Tooltip } from "antd";
-import { homedir } from "os";
 
 const SignOut = () => {
 
