@@ -15,11 +15,12 @@ interface BenefitsProps {
       icon: React.ReactNode;
     }[];
   };
+  id?: string;
 }
 export const Benefits = (props: Readonly<BenefitsProps>) => {
   const { data } = props;
   return (
-      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
+      <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap" id={props.id}>
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${
             props.imgPos === "right" ? "lg:order-1" : ""

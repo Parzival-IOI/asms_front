@@ -11,7 +11,7 @@ const LoginForm = () => {
   const{mutate: loginingOut, isPending} = useMutation({
     mutationFn: login,
     onSuccess: () => {
-      toast.success("Sign Out Successfully");
+      toast.success("Sign In Successfully");
     },
     onError: (e) => {
       toast.error(e.message);

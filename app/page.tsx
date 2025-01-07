@@ -16,7 +16,7 @@ import { benefitOne, benefitTwo } from "@/components/pub/data";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="scroll-smooth">
         <Navbar />
         <div>
           <Container>
@@ -30,10 +30,11 @@ export default function Home() {
               completely open-source.
             </SectionTitle>
 
-            <Benefits data={benefitOne} />
-            <Benefits imgPos="right" data={benefitTwo} />
+            <Benefits data={benefitOne} id="Department" />
+            <Benefits imgPos="right" data={benefitTwo} id="Classes" />
 
-            <SectionTitle
+            <SectionTitle 
+              id="Event"
               preTitle="Watch a video"
               title="Learn how to fullfil your needs"
             >
@@ -45,6 +46,7 @@ export default function Home() {
             <Video videoId="fZ0D0cnR88E" />
 
             <SectionTitle
+              id="Blog"
               preTitle="Testimonials"
               title="Here's what our customers said"
             >

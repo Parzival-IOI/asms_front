@@ -15,6 +15,7 @@ export async function customFetch(url: string, method: string, body: any) {
       body: body
     }
   )
+  console.log(process.env.API + url);
   if(!res.ok) {
     const role = await fetch(
       process.env.API + "auth/connection",
